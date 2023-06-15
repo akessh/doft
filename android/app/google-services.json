@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "376282987806",
+    "project_id": "doft-ecommerce-app",
+    "storage_bucket": "doft-ecommerce-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376282987806:android:2a1a1eb6c29cec288fdd0f",
+        "android_client_info": {
+          "package_name": "com.example.doft_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376282987806-pauutaao7p8qgque3tsd85e8et3medv9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doft_app",
+            "certificate_hash": "b2f6ad01f0a8722956dff434b84ca994fe29aae0"
+          }
+        },
+        {
+          "client_id": "376282987806-4of0e2636qumag16enf1lvbjs1reirnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHhkWXDZqbVyAGhwS14xpT_iJy-xmC9zA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376282987806-4of0e2636qumag16enf1lvbjs1reirnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
