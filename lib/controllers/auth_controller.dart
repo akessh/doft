@@ -1,13 +1,14 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doft_app/models/user_models/user_models.dart';
-import 'package:doft_app/view/home/home.dart';
+import 'package:doft_app/view/login_and_signup/login_screen.dart';
+import 'package:doft_app/view/navigation/navigationscreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class SignUpController extends GetxController {
+class AuthController extends GetxController {
 
   FirebaseAuth auth=FirebaseAuth.instance;
   FirebaseFirestore db=FirebaseFirestore.instance;
@@ -15,6 +16,8 @@ class SignUpController extends GetxController {
   TextEditingController emailController =TextEditingController();
   TextEditingController passController =TextEditingController();
   TextEditingController nameController =TextEditingController();
+  TextEditingController loginUsernameController = TextEditingController();
+  TextEditingController loginPasswordController = TextEditingController();
 
 
   signUp()async{
@@ -27,7 +30,30 @@ class SignUpController extends GetxController {
         name: nameController.text,
         id: auth.currentUser?.uid,
         ));
-        Get.offAll(()=>const SCreenHome());
+        Get.offAll(()=> ScreenNavigation());
+    }catch(e){
+      Get.snackbar('Error', '$e');
+    }
+  }
+
+  signIn()async{
+    try{
+      await auth.signInWithEmailAndPassword(
+        email: loginUsernameController.text, 
+        password: loginPasswordController.text);
+        Get.offAll(()=> ScreenNavigation());
+      
+    }catch(e){
+      Get.snackbar('Error', '$e');
+    }
+
+  }
+
+  signOut()async{
+    try{
+      await auth.signOut();
+      Get.offAll(()=>const ScreenLogin()); 
+
     }catch(e){
       Get.snackbar('Error', '$e');
     }

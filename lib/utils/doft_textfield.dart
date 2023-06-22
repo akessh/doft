@@ -18,7 +18,7 @@ class DoftTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 20, left: 20),
-      child: TextField(
+      child: TextFormField(
         controller: texController,
         obscureText: isPassowrdType,
         enableSuggestions: isPassowrdType,

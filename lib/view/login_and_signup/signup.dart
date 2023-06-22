@@ -1,5 +1,5 @@
 import 'package:doft_app/const/const.dart';
-import 'package:doft_app/controllers/signup_controller.dart';
+import 'package:doft_app/controllers/auth_controller.dart';
 import 'package:doft_app/utils/doft_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class ScreenSignUp extends StatelessWidget {
    ScreenSignUp({super.key});
 
-  final SignUpController c =Get.put(SignUpController());
+  final AuthController c =Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,8 @@ class ScreenSignUp extends StatelessWidget {
       backgroundColor: Colors.blueAccent,
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
-        child: GetBuilder<SignUpController>(
-            init: SignUpController(),
+        child: GetBuilder<AuthController>(
+            init: AuthController(),
             builder: (c) {
               return Column(
                 children: [

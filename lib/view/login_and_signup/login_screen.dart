@@ -1,6 +1,6 @@
 
 import 'package:doft_app/const/const.dart';
-import 'package:doft_app/controllers/login_controller.dart';
+import 'package:doft_app/controllers/auth_controller.dart';
 import 'package:doft_app/view/login_and_signup/signup.dart';
 import 'package:doft_app/utils/doft_textfield.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +29,8 @@ class ScreenLogin extends StatelessWidget {
           ),
          Padding(
            padding: const EdgeInsets.only(top: 300),
-           child: GetBuilder<LoginController>(
-            init: LoginController(),
+           child: GetBuilder<AuthController>(
+            init: AuthController(),
              builder: (c) {
                return Column(
                     
@@ -40,17 +40,17 @@ class ScreenLogin extends StatelessWidget {
                         text: 'ENTER USERNAME',
                         icon:Icons.person_2_outlined ,
                         isPassowrdType: false,
-                          texController: c.usernameController),
+                          texController: c.loginUsernameController),
                      ksize,
                       DoftTextField(
                          text: 'ENTER PASSWORD',
                         icon:Icons.lock_outlined ,
                         isPassowrdType:true,
-                          texController: c.passwordController),
+                          texController: c.loginPasswordController),
                           ksize,
                       ElevatedButton(
                         onPressed: () {
-                          c.loginFunction();
+                          c.signIn();
                         },
                         child: const Text('LOGIN'),
                       ),
